@@ -1,0 +1,30 @@
+
+-- Membuat tabel penjualan_buah
+CREATE TABLE penjualan_buah (
+    id_penjualan INT PRIMARY KEY AUTO_INCREMENT,
+    nama_buah VARCHAR(100),
+    kategori VARCHAR(50),
+    harga DECIMAL(10,2),
+    jumlah_terjual INT
+);
+
+-- Menambahkan data ke dalam tabel penjualan_buah
+INSERT INTO penjualan_buah (nama_buah, kategori, harga, jumlah_terjual) 
+VALUES 
+('Apel', 'Buah Lokal', 24000.00, 100),
+('Jeruk', 'Buah Lokal', 15000.00, 150),
+('Durian', 'Buah Musiman', 49000.00, 80),
+('Mangga', 'Buah Lokal', 20000.00, 120),
+('Alpukat', 'Buah Lokal', 30000.00, 90);
+
+-- Memperbarui harga buah Apel
+UPDATE penjualan_buah
+SET harga = 23000.00
+WHERE nama_buah = 'Apel';
+
+-- Menghapus data buah Jeruk
+DELETE FROM penjualan_buah
+WHERE nama_buah = 'Jeruk';
+
+-- Menampilkan semua data dari tabel penjualan_buah
+SELECT * FROM penjualan_buah;
